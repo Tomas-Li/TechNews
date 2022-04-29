@@ -1,0 +1,333 @@
+/*Clasico Style reset*/
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Definicion general del body y de su fondo (fondo patron -> https://heropatterns.com/)*/
+body{
+    background-color: black;
+    color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23540606' fill-opacity='0.1'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+}
+
+/*Se cambio el color de los links y se elimino el subrayado*/
+a {
+    color: white;
+    text-decoration: none;
+}
+
+/*Se quito los marcadores de la unordered list*/
+ul {
+    list-style: none;
+}
+
+/*Clase container principal que solo:*/
+    /*Aplica un ancho del 90% total de la pagina*/
+    /*Centra el container*/
+.container {
+    width: 90%;
+    margin:auto;
+}
+
+/* Navigation */
+/*Clase de <nav> (contenedor principal de la navegacion)*/
+    /*Especificamos generales como font-size, height, padding*/
+    /*Indicamos display: flex -> ahora los hijos se organizan en base a flexbox*/
+        /*Justify-content: space-between -> Espaciado en eje principal(*row*) entre elementos*/
+        /*align-items: center -> Espaciado en eje secundario (*col*) centrando */
+.nav-main{
+    font-size: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 20px 0;
+}
+
+/*Clase aplicada al <img> del logo, solo aplica tamaño y centrado*/
+.nav-brand {
+    width:50px;
+    height: auto;
+}
+
+/* Navegacion izquierda */
+/*Clase aplicada a las ul dentro de nav-main*/
+    /*Solo indica que sus elementos (li) van a acomodarse como flex (default->row)*/
+.nav-main ul {
+    display:flex;
+}
+
+/*Se determina la separacion entre los elementos de la lista*/
+.nav-main ul li{
+    padding: 10px;
+}
+
+/*Se determina la separacion de los elementos <a> dentro de la lista (mas espaciado)*/
+.nav-main ul li a{
+    padding: 10px;
+} 
+
+/*Agrega el efecto de hover sobre los anchors*/
+.nav-main ul li a:hover{
+    border-bottom: 2px solid #ffffff;
+}
+
+/*Declaro que el ul izquierdo tiene un flex¿-grow? de 1 y un margen respecto al logo*/
+.nav-main ul.nav-menu{
+    flex: 1;
+    margin-left:20px;
+}
+
+/*This is the button that will appears in small screen which purpouse is to show the side-bar*/
+.menu-btn {
+    position:absolute; /*To position the button wherever we want*/
+    cursor: pointer; /*To make the icon work as a button*/
+    top: 12px;
+    right: 30px;
+    z-index: 2; /*Just to ensure that it will always appear*/
+    font-size: 1.5rem; /*Size of the icon*/
+    display: none; /*So that it doesn't appears in the normal interface*/
+}
+
+.menu-btn:hover {
+    color: rgba(255,255,255,0.5);
+    text-decoration: underline;
+}
+
+
+/*Le doy un margen a la horizontal rule para evitar que este todo amontonado*/
+hr {
+    margin: 10px 0;
+}
+
+/*      SHOWCASE    */
+/*Esto solo agrega la imagen de fondo (correctamente centrada y cubriendo todo el contenedor) y coloca el texto como flex (columnas) en el borde inferior*/
+.showcase{
+    width: 100%;
+    height: 550px;
+    background: url('./img/showcase2.jpg') no-repeat center center/cover;
+    padding: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/*Las siguientes dos clases son dedicadas a mostart como convertir un <a> en un  button*/
+.btn{
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #262626;
+    color: #ffffff;
+    font-size: 15px;
+    border: 1px solid #ffffff;
+    margin: 10px 0;
+}
+
+.btn:hover{
+    color: rgba(255,255,255,0.5); /*Or change the opacity*/
+    font-style: italic;
+    text-decoration: underline;
+}
+
+/*Lo siguiente establece el comporamiento de h2 y p dentro de showcase*/
+.showcase h2, 
+.showcase p{
+    margin-bottom: 10px;;
+}
+
+/*  NEWS CARDS  */
+.news-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin: 10px 0;
+}
+
+.news-cards img{
+    width: 100%;
+    height: 250px;
+}
+
+.news-cards h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.news-cards a {
+    padding: 10px 0;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    display: inline-block;
+    font-weight: bold;
+}
+.news-cards a:hover {
+    text-decoration: underline;
+}
+
+/*     CARDS BANNER ONE    */
+.cards-banner-one {
+    width: 100%;
+    height: 350px;
+    background: url('./img/tech-red.jpg') no-repeat center center/cover;
+    margin-bottom: 40px;
+}
+
+.cards-banner-one .content {
+    width: 40%;
+    padding: 90px 0px 0px 30px;
+    color: white;
+}
+
+.cards-banner-one p,
+.cards-banner-one h2 {
+    margin: 10px 0 20px 0;
+}
+
+/*      CARDS BANNER TWO    */
+.cards-banner-two {
+    width: 100%;
+    height: 350px;
+    background: url('./img/image-five.jpg') no-repeat center center/cover;
+    margin-bottom: 40px;
+}
+
+.cards-banner-two .content {
+    width: 50%;
+    padding: 100px 0px 0px 30px;
+    color: white;
+}
+
+.cards-banner-two p,
+.cards-banner-two h2 {
+    margin: 10px 0 20px 0;
+}
+
+/*      Social  */
+.social {
+    margin: 50px;
+}
+
+.social p {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links a {
+    margin: 0 30px;
+}
+
+.links a i {
+    font-size: 3rem;
+}
+
+/*  FOOTER LINKS    */
+
+.footer-links {
+    background-color: #2f3640;
+    color: #616161;
+    font-size: 12px;
+    padding: 35px 0;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.footer-container ul {
+    margin: 0 auto;
+}
+
+.footer-container ul li {
+    line-height: 2.8;
+}
+
+.footer{
+    background-color: #2f3640;
+    color: #616161;
+    font-size: 12px;
+    padding: 20px 0;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+
+    /*This makes our button appears*/
+    .menu-btn {
+        display: block
+    }
+
+    .nav-main ul.nav-menu{
+        display: block; /*Para que cada elemento de la lista este en forma de bloque*/
+        position: absolute; /*Para poder posicionarlo arriba de todo*/
+        top: 0;
+        left: 0;
+        background-color: #2f3640;
+        height: 100%; /*Para que la barra cubra todo el lado izquierdo*/
+        padding: 15px;
+        opacity: .9;
+        transform: translateX(-400px);  
+        transition: transform .5s ease-in-out; /*This is for effects*/
+    }
+
+    .nav-main ul.nav-menu.show{
+        transform: translateX(-20px) /*-20px para arreglar el espaciado al borde que se le daba por container!*/ 
+    }
+
+    .nav-main ul.nav-menu-right {
+        margin-right: 40px;
+    }
+
+    .news-cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cards-banner-one .content,
+    .cards-banner-two .content{
+        width: 80%;
+    }
+
+    .footer-links .footer-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media (max-width: 500px) {
+    body{
+        background-color: red;
+    }
+
+    .news-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-banner-one .content,
+    .cards-banner-two .content{
+        width: 100%;
+        padding: 60px 20px;
+    }
+
+    .footer-links .footer-container{
+        grid-template-columns: 1fr;
+    }
+}
