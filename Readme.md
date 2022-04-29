@@ -1,0 +1,1 @@
+Nada particularmente importante, solo un buen ejemplo de diseño mobile-first de un viejo tutorial que estoy guardando en mi github para no olvidarme que existe
